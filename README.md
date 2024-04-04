@@ -10,7 +10,7 @@ The repository is organized into major components for baseline comparison approa
 - `CoMISI/`: Hosts the official PyTorch implementation of the CoMISI architecture, including scripts for training and embedding extraction.
 
 ### Detailed CoMISI Structure
-
+```
 CoMISI/
 ├── embeddings_extraction/
 │ └── <Python files for embeddings extraction>
@@ -46,9 +46,8 @@ CoMISI/
 │ └── model.py # Concatenation fusion
 ├── train_GRID.py
 └── train_RAVDESS.py
+```
 
-shell
-Copy code
 
 ## Getting Started
 
