@@ -19,12 +19,12 @@ import tqdm
 
 
 # Configuration
-dataset_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/datasets/GRID_Interm"
-output_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Grid/Clean"
+dataset_path = ".../datasets/GRID_Interm"
+output_path = ".../features/CoMISI/Grid/Clean"
 
 # Initialize models
 embedder = FaceNet()
-ecapa_tdnn = SpeakerRecognition.from_hparams(source="lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/pretrained_ecapa_tdnn")
+ecapa_tdnn = SpeakerRecognition.from_hparams(source=".../pretrained_ecapa_tdnn")
 detector = MTCNN()
 
 def preprocess_audio_librosa(audio_path, target_sample_rate=16000):

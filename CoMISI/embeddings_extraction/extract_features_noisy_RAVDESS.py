@@ -19,12 +19,12 @@ import tqdm
 
 
 # Configuration
-dataset_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/datasets/RAVDESS_Interm"
-output_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Ravdess/Noise"
+dataset_path = ".../datasets/RAVDESS_Interm"
+output_path = ".../features/CoMISI/Ravdess/Noise"
 
 # Initialize models
 embedder = FaceNet()
-ecapa_tdnn = SpeakerRecognition.from_hparams(source="lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/pretrained_ecapa_tdnn")
+ecapa_tdnn = SpeakerRecognition.from_hparams(source=".../pretrained_ecapa_tdnn")
 detector = MTCNN()
 
 def add_reverberation_and_noise(signal, sr=16000, snr_db_mean=30 , snr_db_std=1.5, sir_db_min=10, sir_db_max=25, room_dim=[8, 6, 3], absorption=0.6, mic_loc=[2, 3, 2], source_loc=[4, 3, 1.5]):

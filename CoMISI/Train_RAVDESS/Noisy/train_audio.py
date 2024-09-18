@@ -42,9 +42,9 @@ def calculate_metrics(y_true, y_pred):
 
 
 # Load data
-train_dataset = AudioDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Ravdess/Noise/train_features.csv')
-val_dataset = AudioDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Ravdess/Noise/val_features.csv')
-test_dataset = AudioDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Ravdess/Noise/test_features.csv')
+train_dataset = AudioDataset(csv_file='.../features/CoMISI/Ravdess/Noise/train_features.csv')
+val_dataset = AudioDataset(csv_file='.../features/CoMISI/Ravdess/Noise/val_features.csv')
+test_dataset = AudioDataset(csv_file='.../features/CoMISI/Ravdess/Noise/test_features.csv')
 
 
 # DataLoader
@@ -62,7 +62,7 @@ def train_and_evaluate(model, train_loader, val_loader, test_loader):
     scheduler = ReduceLROnPlateau(optimizer, 'min', patience=5, verbose=True)
     
     best_val_loss = float('inf')
-    best_model_path = 'lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/CoMISI/weights/best_model_single_audio_ravdess_noise.pth'  # Path to save the best model
+    best_model_path = '.../CoMISI/weights/best_model_single_audio_ravdess_noise.pth'  # Path to save the best model
 
     # Training loop
     for epoch in range(EPOCHS):
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     avg_f1 = np.mean([result[3] for result in all_results])
 
     # Write results to a file for the single run
-    results_file_path = 'lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/Results/CoMISI/RAVDESS/noise/Single_Audio_Results.txt'  # Adjust the path as necessary
+    results_file_path = '.../Results/CoMISI/RAVDESS/noise/Single_Audio_Results.txt'  # Adjust the path as necessary
     with open(results_file_path, 'w') as file:
         for run, (accuracy, precision, recall, f1) in enumerate(all_results, start=1):
             file.write(f'Run {run}: Test Accuracy: {accuracy}, Test Precision: {precision}, Test Recall: {recall}, Test F1: {f1}\n')

@@ -34,9 +34,9 @@ class VisualDataset(Dataset):
         return visual_feature, label
 
 # Load data
-train_dataset = VisualDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Grid/Noise/train_features.csv')
-val_dataset = VisualDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Grid/Noise/val_features.csv')
-test_dataset = VisualDataset(csv_file='lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Grid/Noise/test_features.csv')
+train_dataset = VisualDataset(csv_file='.../features/CoMISI/Grid/Noise/train_features.csv')
+val_dataset = VisualDataset(csv_file='.../features/CoMISI/Grid/Noise/val_features.csv')
+test_dataset = VisualDataset(csv_file='.../features/CoMISI/Grid/Noise/test_features.csv')
 
 
 def calculate_metrics(y_true, y_pred):
@@ -60,7 +60,7 @@ def train_and_evaluate(model, train_loader, val_loader, test_loader):
     scheduler = ReduceLROnPlateau(optimizer, 'min', patience=5, verbose=True)
     
     best_val_loss = float('inf')
-    best_model_path = 'lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/CoMISI/weights/best_model_single_visual_Grid_noise.pth'  # Path to save the best model
+    best_model_path = '.../CoMISI/weights/best_model_single_visual_Grid_noise.pth'  # Path to save the best model
 
     # Training loop
     for epoch in range(EPOCHS):
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     avg_f1 = np.mean([result[3] for result in all_results])
 
     # Write results to a file for the single run
-    results_file_path = 'lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/Results/CoMISI/Grid/noise/Single_Visual_Results.txt'  # Adjust the path as necessary
+    results_file_path = '.../Results/CoMISI/Grid/noise/Single_Visual_Results.txt'  # Adjust the path as necessary
     with open(results_file_path, 'w') as file:
         for run, (accuracy, precision, recall, f1) in enumerate(all_results, start=1):
             file.write(f'Run {run}: Test Accuracy: {accuracy}, Test Precision: {precision}, Test Recall: {recall}, Test F1: {f1}\n')

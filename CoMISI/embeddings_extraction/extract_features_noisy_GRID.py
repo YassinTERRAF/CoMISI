@@ -18,12 +18,12 @@ import tqdm
 # from tqdm import tqdm
 
 # Configuration
-dataset_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/datasets/GRID_Interm"
-output_path = "lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/features/CoMISI/Grid/Noise"
+dataset_path = ".../datasets/GRID_Interm"
+output_path = ".../features/CoMISI/Grid/Noise"
 
 # Initialize models
 embedder = FaceNet()
-ecapa_tdnn = SpeakerRecognition.from_hparams(source="lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/pretrained_ecapa_tdnn")
+ecapa_tdnn = SpeakerRecognition.from_hparams(source=".../pretrained_ecapa_tdnn")
 detector = MTCNN()
 
 def add_reverberation_and_noise(signal, sr=16000, snr_db_mean=30 , snr_db_std=1.5, sir_db_min=5, sir_db_max=25, room_dim=[8, 6, 3], absorption=0.5, mic_loc=[2, 3, 2], source_loc=[4, 3, 1.5]):
@@ -208,7 +208,7 @@ def extract_visual_embedding(image_path):
         final_face_image = adjusted_random_crop(face_with_central_noise)
         final_face_image_resized = cv2.resize(final_face_image, (160, 160))
 
-        # cv2.imwrite("/home/yassin.terraf/lustre/rsc_mgt_wi-st-sccs-lj7uaansp4q/users/yassin.terraf/multimodal_speaker_recognition/CoMISI/embeddings_extraction/cropped_face2.png",final_face_image_resized)
+        # cv2.imwrite("/home/yassin.terraf/.../CoMISI/embeddings_extraction/cropped_face2.png",final_face_image_resized)
         # d
         final_face_image_batch = np.expand_dims(final_face_image_resized, axis=0)
         
