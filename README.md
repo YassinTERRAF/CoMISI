@@ -73,7 +73,9 @@ Please cite our work if you find it useful in your research:
 Contributions to CoMISI are welcome. Please submit pull requests or open issues to discuss proposed changes.
 
 ## License
-<Specify your license here>
+
+Make sure to also add a `LICENSE` file with the full text of the MIT license in the root directory of your repository.
+
   
 ## Contact
 For questions or feedback related to CoMISI, please contact us at yassin.terraf@um6p.ma.
