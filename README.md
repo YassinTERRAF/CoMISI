@@ -62,10 +62,9 @@ python train_GRID.py --condition Clean --options
 python train_RAVDESS.py --condition Clean --options
 
 ## Citation
-Please cite our work if you find it useful in your research:
+If you find our work useful in your research, please consider citing:
 
-
-<Insert citation here>
+**Yassin Terraf, Youssef Iraqi.** "CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions through Cross-Modal Interaction." *Proceedings of the International Conference on Neural Information Processing (ICONIP)*, 2024. (Accepted for publication).
 
   
 ## Contributions
