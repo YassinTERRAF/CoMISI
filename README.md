@@ -100,7 +100,16 @@ To train the CoMISI models under various conditions, use the `train_GRID.py` and
 
 If you find our work useful in your research, please consider citing:
 
-**Yassin Terraf, Youssef Iraqi.** "CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions through Cross-Modal Interaction." *Proceedings of the International Conference on Neural Information Processing (ICONIP)*, 2024. (Accepted for publication).
+```bibtex
+@InProceedings{10.1007/978-981-96-6594-5_6,
+author = {Terraf, Yassin and Iraqi, Youssef},
+title = {CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions Through Cross-Modal Interaction},
+booktitle = {Neural Information Processing},
+year = {2026},
+publisher = {Springer Nature Singapore},
+pages = {61--77},
+isbn = {978-981-96-6594-5}
+}
 
 ## Contributions
 
