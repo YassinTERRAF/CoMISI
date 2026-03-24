@@ -1,42 +1,38 @@
-
 # CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions through Cross-Modal Interaction
 
-This repository contains the official implementation of the paper **"CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions through Cross-Modal Interaction"** by Yassin Terraf and Youssef Iraqi, presented at the *International Conference on Neural Information Processing (ICONIP), 2024* (Accepted for publication). 
+This repository provides the official implementation of the paper:
 
-Our work introduces a novel **cross-modal interaction framework** that leverages both audio and visual modalities for speaker identification. CoMISI enhances speaker identification performance under a variety of challenging conditions by fusing both modalities in a robust and adaptive manner.
+**"CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions through Cross-Modal Interaction"**  
+Yassin Terraf, Youssef Iraqi  
+*Neural Information Processing (ICONIP), 2026*
 
-## Table of Contents
-- [Repository Structure](#repository-structure)
-  - [Detailed Directory Structure](#detailed-directory-structure)
-- [Getting Started](#getting-started)
-  - [Feature Extraction](#feature-extraction)
-  - [Training Models](#training-models)
-- [Citation](#citation)
-- [Contributions](#contributions)
-- [License](#license)
-- [Contact](#contact)
+---
 
-## Repository Structure
+## 🔍 Overview
 
-The repository is organized into key components for the CoMISI framework, alongside baseline comparison models and scripts for dataset processing:
+CoMISI introduces a novel **cross-modal interaction framework** for robust speaker identification by jointly leveraging **audio** and **visual** modalities.
 
-- `CoMISI/`: Contains the core PyTorch implementation of CoMISI, including model training scripts and embedding extraction.
+Unlike traditional fusion strategies, CoMISI explicitly models interactions between modalities, improving performance under challenging conditions such as background noise and visual variability.
 
-### Detailed Directory Structure
+---
 
-```bash
+## 📂 Repository Structure
+
+The repository is organized into core components of the CoMISI framework, along with baseline models and dataset-specific training scripts.
+
+```
 CoMISI/
-├── embeddings_extraction/        # Scripts for extracting embeddings
-│   └── <Embedding extraction scripts>
+├── embeddings_extraction/        # Scripts for feature/embedding extraction
+│   └── <embedding scripts>
 ├── train_GRID/
-│   ├── Clean/                    # Training models on clean GRID dataset
-│   │   ├── CrossModalRelationModel.py    # CMIF fusion model
-│   │   ├── model_attention.py            # Attention-based fusion
-│   │   ├── model_audio.py                # Audio modality model
-│   │   ├── model_score_level.py          # Score-level fusion model
-│   │   ├── model_visual.py               # Visual modality model
-│   │   └── model.py                      # Concatenation-based fusion model
-│   └── Noise/                    # Training models on noisy GRID dataset
+│   ├── Clean/                   # Models trained on clean GRID dataset
+│   │   ├── CrossModalRelationModel.py
+│   │   ├── model_attention.py
+│   │   ├── model_audio.py
+│   │   ├── model_score_level.py
+│   │   ├── model_visual.py
+│   │   └── model.py
+│   └── Noise/                   # Models trained on noisy GRID dataset
 │       ├── CrossModalRelationModel.py
 │       ├── model_attention.py
 │       ├── model_audio.py
@@ -44,81 +40,92 @@ CoMISI/
 │       ├── model_visual.py
 │       └── model.py
 ├── train_RAVDESS/
-│   ├── Clean/                    # Training models on clean RAVDESS dataset
+│   ├── Clean/                   # Models trained on clean RAVDESS dataset
 │   │   ├── CrossModalRelationModel.py
 │   │   ├── model_attention.py
 │   │   ├── model_audio.py
 │   │   ├── model_score_level.py
 │   │   ├── model_visual.py
 │   │   └── model.py
-│   └── Noise/                    # Training models on noisy RAVDESS dataset
+│   └── Noise/                   # Models trained on noisy RAVDESS dataset
 │       ├── CrossModalRelationModel.py
 │       ├── model_attention.py
 │       ├── model_audio.py
 │       ├── model_score_level.py
 │       ├── model_visual.py
 │       └── model.py
-├── train_GRID.py                 # Script to train on GRID dataset
-└── train_RAVDESS.py              # Script to train on RAVDESS dataset
+├── train_GRID.py                # Training script for GRID dataset
+└── train_RAVDESS.py             # Training script for RAVDESS dataset
 ```
 
-## Getting Started
+---
 
-### Feature Extraction
+## 🚀 Getting Started
 
-To extract embeddings from the datasets, navigate to the `feature_extraction` directory and run the appropriate script for your needs:
+### 1. Feature Extraction
 
-- Run the following for the GRID dataset:
-  
-  ```bash
-  python extract_features_grid.py
-  ```
+Before training, extract embeddings from the datasets:
 
-- Run the following for the RAVDESS dataset:
-  
-  ```bash
-  python extract_features_ravdess.py
-  ```
+```bash
+# GRID dataset
+python extract_features_grid.py
 
-### Training Models
+# RAVDESS dataset
+python extract_features_ravdess.py
+```
 
-To train the CoMISI models under various conditions, use the `train_GRID.py` and `train_RAVDESS.py` scripts, specifying the dataset and condition as needed:
+---
 
-- For the GRID dataset:
+### 2. Training
 
-  ```bash
-  python train_GRID.py --condition Clean --options
-  ```
+Train models under different conditions:
 
-- For the RAVDESS dataset:
+```bash
+# GRID dataset
+python train_GRID.py --condition Clean
 
-  ```bash
-  python train_RAVDESS.py --condition Clean --options
-  ```
+# RAVDESS dataset
+python train_RAVDESS.py --condition Clean
+```
 
-## Citation
+You can switch between `Clean` and `Noise` conditions depending on your experiment setup.
 
-If you find our work useful in your research, please consider citing:
+---
+
+## 📖 Citation
+
+If you find this work useful, please cite:
 
 ```bibtex
 @InProceedings{10.1007/978-981-96-6594-5_6,
-author = {Terraf, Yassin and Iraqi, Youssef},
-title = {CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions Through Cross-Modal Interaction},
-booktitle = {Neural Information Processing},
-year = {2026},
-publisher = {Springer Nature Singapore},
-pages = {61--77},
-isbn = {978-981-96-6594-5}
+  author    = {Terraf, Yassin and Iraqi, Youssef},
+  title     = {CoMISI: Multimodal Speaker Identification in Diverse Audio-Visual Conditions Through Cross-Modal Interaction},
+  booktitle = {Neural Information Processing},
+  year      = {2026},
+  publisher = {Springer Nature Singapore},
+  pages     = {61--77},
+  isbn      = {978-981-96-6594-5}
 }
+```
 
-## Contributions
+---
 
-Contributions to CoMISI are welcome. Please submit pull requests or open issues to discuss proposed changes.
+## 🤝 Contributing
 
-## License
+Contributions are welcome!  
+Feel free to open issues or submit pull requests to improve the repository.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+---
 
-## Contact
+## 📄 License
 
-For questions or feedback related to CoMISI, please contact us at yassin.terraf@um6p.ma.
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📬 Contact
+
+For questions or collaborations:
+
+📧 yassin.terraf@um6p.ma
